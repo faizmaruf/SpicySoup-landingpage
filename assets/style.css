@@ -4,10 +4,14 @@
 
 body {
     margin: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.container {
+    margin: 5px;
 }
 
 .head {
@@ -45,9 +49,6 @@ body {
 
 .main-content {
     display: flex;
-}
-
-.aside {
     order: 1;
     flex: 0.3;
 }
@@ -57,15 +58,20 @@ body {
     order: 2;
     flex: 9;
     display: flex;
-    flex-direction: row-reverse;
+    box-sizing: border-box;
 }
 
 .hero .content {
     order: 1;
     flex: 1;
     display: flex;
-    flex-direction: column;
+
     padding: 0px 50px;
+}
+
+.hero .hero-img {
+    order: 2;
+    margin: auto;
 }
 
 .hero .content .content-container {
@@ -75,7 +81,7 @@ body {
 .content-judul,
 .content-tagline,
 .content-deskripsi {
-    margin: -25px;
+    margin: -25px 0px;
 }
 
 .content-judul p {
@@ -110,6 +116,8 @@ body {
 
 }
 
+
+
 a {
     text-decoration: none;
     color: #000000;
@@ -134,6 +142,10 @@ a {
     display: flex;
 }
 
+.button:hover {
+    box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.5);
+}
+
 .cta {
     background-color: #D85A5A;
     color: #fff;
@@ -142,8 +154,11 @@ a {
 .hero div img {
     order: 1;
     flex: 1;
-    width: 700px;
-    padding-right: 50px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: auto;
+
 }
 
 .notice {
@@ -159,4 +174,100 @@ a {
 .notice .time {
     font-weight: normal;
     color: #9E7474;
+}
+
+.balok {
+    margin: auto;
+    width: 8px;
+    height: 287px;
+    margin: auto;
+    background-color: #D85A5A;
+}
+
+.balok-kecil {
+    height: 30px;
+    margin-top: -120px;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 517px) {
+    .hero {
+        order: 2;
+        flex: 9;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero .content {
+        order: 2;
+        padding: 3px;
+    }
+
+    .hero .hero-img {
+        order: 1;
+        margin: auto;
+    }
+
+    .hero div img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+
+    }
+
+    .balok,
+    .balok-kecil,
+    .nav .header img {
+        display: none;
+    }
+}
+
+@media (max-width: 407px) {
+    .hero {
+        order: 2;
+        flex: 8;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero .content {
+        order: 2;
+        padding: 0px;
+    }
+
+    .hero .hero-img {
+        order: 1;
+        margin: auto;
+    }
+
+    .hero div img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+
+    }
+
+    .content-judul p {
+
+        font-size: 42px;
+
+    }
+
+    .content-tagline p {
+
+        font-size: 30px;
+
+    }
+
+    .content-deskripsi p {
+
+        font-size: 12px;
+
+        line-height: 30px;
+    }
+
 }
